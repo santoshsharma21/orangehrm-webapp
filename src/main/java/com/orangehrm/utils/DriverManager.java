@@ -52,9 +52,12 @@ public class DriverManager {
 		if(getDriver() != null) {
 			try {
 				getDriver().quit();
+				log.info("WebDriver quit successfully");
 			} catch(Exception e) {
-				log.info("webdriver closed successfully");
+				log.error("Exception while quitting WebDriver", e);
 			}
+		} else {
+			log.warn("No WebDriver instance found to quit");
 		}
 	}
 }

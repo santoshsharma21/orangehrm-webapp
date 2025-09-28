@@ -42,7 +42,7 @@ public class WaitUtils {
 			return ele;
 		} catch(Exception e) {
 			log.error("Timeout: Element not clickable within wait time: " + locator,e);
-			throw new RuntimeException("Element not clickable withing wait time: " + locator, e);
+			throw new RuntimeException("Element not clickable within wait time: " + locator, e);
 		}
 	}
 	

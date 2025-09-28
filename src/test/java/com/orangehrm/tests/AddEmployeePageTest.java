@@ -29,7 +29,7 @@ public class AddEmployeePageTest extends BaseClass {
 	private AddEmployeePage addEmployeePage;
 	
 	@Test()
-	public void testAddEmployee() throws InterruptedException {
+	public void testAddEmployee(){
 		FrameworkLogger.phase("testAddEmployee");
 		loginPage = new LoginPage(DriverManager.getDriver());
 		homePage = loginPage.login(ConfigReader.getProperty("Username"), ConfigReader.getProperty("Password"));

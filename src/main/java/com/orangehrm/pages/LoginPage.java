@@ -17,6 +17,7 @@ public class LoginPage extends BasePage {
 	private By loginButton = By.xpath("//button[normalize-space()='Login']");
 	private By forgotPassword = By.xpath("//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']");
 	private By loginErrorIndicator = By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']");
+	private By emptyfieldIndicator = By.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']");
 	
 	// constructor
 	public LoginPage(WebDriver driver) {
@@ -33,10 +34,14 @@ public class LoginPage extends BasePage {
 	}
 	
 	public void clickOnForgotPass() {
-		actionDriver.click(forgotPassword);
+		actionDriver.clickUsingJs(forgotPassword);
 	}
 	
 	public boolean isLoginFailed() {
 		return actionDriver.isDisplayed(loginErrorIndicator);
+	}
+	
+	public boolean isFieldRequiredMessageDisplayed() {
+		return actionDriver.isDisplayed(emptyfieldIndicator);
 	}
 }
